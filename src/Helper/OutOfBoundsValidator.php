@@ -36,7 +36,7 @@ final class OutOfBoundsValidator
         $basePackage = $this->getPackageByScope($scope);
 
         $requiredPackages = $this->getPackagesAssociatedWithClass($reference);
-        if ($requiredPackages->isEmpty()) {
+        if ($requiredPackages->isEmpty() || $requiredPackages->contains($basePackage)) {
             return;
         }
 
