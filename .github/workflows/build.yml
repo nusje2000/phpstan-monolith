@@ -1,0 +1,27 @@
+name: Build
+
+on: [pull_request, push]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Setup PHP, with composer and extensions
+                uses: shivammathur/setup-php@v1
+                with:
+                    php-version: 7.2
+
+            -   uses: actions/checkout@v1
+
+            -   name: Validate composer.json and composer.lock
+                run: |
+                    composer clear-cache
+                    composer validate
+
+            -   name: Install dependencies
+                run: |
+                    composer install --prefer-dist --no-progress --no-suggest
+
+            -   name: PHP Stan
+                run: |
+                    composer run phpstan

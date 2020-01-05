@@ -1,0 +1,27 @@
+{
+    "name": "nusje2000/phpstan-monolith",
+    "description": "PHPStan extension that can validate usages of namespaces based on the composer dependencies in internal packages",
+    "type": "phpstan-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maarten Nusteling",
+            "email": "maarten.nusteling@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpstan/phpstan": "^0.12.3",
+        "nusje2000/dependency-graph": "^1.0|^2.0"
+    },
+    "scripts": {
+        "phpstan": [
+            "vendor/bin/phpstan analyze ./src --level max"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Nusje2000\\PHPStan\\Monolith\\": "src"
+        }
+    }
+}

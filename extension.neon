@@ -1,0 +1,11 @@
+rules:
+    - Nusje2000\PHPStan\Monolith\Rule\ClassConstOutOfBounds
+    - Nusje2000\PHPStan\Monolith\Rule\ClassDefinitionOutOfBounds
+    - Nusje2000\PHPStan\Monolith\Rule\InstantiationOutOfBounds
+    - Nusje2000\PHPStan\Monolith\Rule\MethodDefinitionOutOfBounds
+    - Nusje2000\PHPStan\Monolith\Rule\StaticCallOutOfBounds
+    - Nusje2000\PHPStan\Monolith\Rule\ClosureOutOfBounds
+
+services:
+    -
+        class: Nusje2000\PHPStan\Monolith\Helper\OutOfBoundsValidator
