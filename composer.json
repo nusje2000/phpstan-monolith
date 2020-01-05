@@ -9,7 +9,6 @@
             "email": "maarten.nusteling@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "phpstan/phpstan": "^0.12.3",
         "nusje2000/dependency-graph": "^1.0|^2.0"
