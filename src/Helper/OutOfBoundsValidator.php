@@ -34,6 +34,10 @@ final class OutOfBoundsValidator
     public function validate(Scope $scope, Name $reference): void
     {
         $basePackage = $this->getPackageByScope($scope);
+        
+        if ($basePackage->getName() === $this->graph->getRootPackage()->getName()) {
+            return;
+        }
 
         $requiredPackages = $this->getPackagesAssociatedWithClass($reference);
         if ($requiredPackages->isEmpty() || $requiredPackages->contains($basePackage)) {
